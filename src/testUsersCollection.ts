@@ -4,12 +4,25 @@ import type { UsersCollectionType, UsersType } from './types'
 /**
  * Utility class for testing.
  */
+
+interface UserQuery {
+	name?: string;
+	age?: number;
+	city?: string;
+	[key: string]: string | number | undefined;
+}
+
+interface Options {
+	sort?: { [key: string]: number };
+	limit?: number;
+}
+
 export class TestUsersCollection {
-	data: UsersCollectionType
+	data: UsersCollectionType;
 
 	constructor(data: UsersCollectionType = []) {
-		assert(Array.isArray(data))
-		this.data = [...data]
+		assert(Array.isArray(data));
+		this.data = [...data];
 	}
 
 	log(): this {

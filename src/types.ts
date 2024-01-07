@@ -6,3 +6,12 @@ export interface UsersType {
 }
 
 export type UsersCollectionType = UsersType[]
+
+export interface Query {
+	[key: string]: any;
+}
+
+export interface Options {
+	sort?: { [key: string]: number };
+	limit?: number;
+}
